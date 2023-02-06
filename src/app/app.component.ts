@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'studyFullStackAngularEndDotNetCore';
+  saluti:string="Benvenuti in alfashop";
+
+  bollini:number = 1500
 }
