@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup , Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup , Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,19 +8,42 @@ import { FormBuilder, FormGroup , Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginform:FormGroup
-  constructor(private fb:FormBuilder) {
-    this.loginform = this.fb.group({
+  loginForm:FormGroup
+  autenticato :boolean
+  errorMsg:string
+  constructor(private fb:FormBuilder , private router:Router) {
+
+    this.autenticato= false;
+    this.errorMsg=''
+
+    // inizializzazione form
+    this.loginForm = this.fb.group({
       email : ['', [ Validators.maxLength(255), Validators.minLength(6), Validators.required]],
       password : ['', [ Validators.maxLength(255), Validators.minLength(6), Validators.required]],
-      remberMe : ['', Validators.requiredTrue]
+      rememberMe : ['', Validators.requiredTrue]
     });
   }
 
   ngOnInit(): void {
   }
 
-  invioLogin(){
+  invioLogin():void{
+    console.log(this.loginForm.value)
+    this.router.navigate(['welcome',this.email]);
+  }
+
+  // getter del for loginForm
+
+  get email ():FormControl{
+    return this.loginForm.get('email')!.value as FormControl;
+  }
+
+  get password ():FormControl{
+    return this.loginForm.get('password')!.value as FormControl;
+  }
+
+  get rememberMe ():FormControl{
+    return this.loginForm.get('rememberMe')!.value as FormControl;
   }
 
 
