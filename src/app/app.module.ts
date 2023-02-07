@@ -8,7 +8,7 @@ import { WelcomeComponent } from './component/welcome/welcome.component';
 import { LoginComponent } from './component/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArticoliComponent } from './component/articoli/articoli.component';
-
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +21,8 @@ import { ArticoliComponent } from './component/articoli/articoli.component';
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+import { LoginService } from './../../service/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup , Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -13,9 +14,9 @@ export class LoginComponent implements OnInit {
   errorMsg:string
   titolo:string
   sottotitolo:string
-  constructor(private fb:FormBuilder , private router:Router) {
+  constructor(private fb:FormBuilder , private router:Router , private loginService:LoginService) {
 
-    this.autenticato= false;
+    this.autenticato= true;
     this.errorMsg=''
     this.titolo='Accesso & Autenticazione'
     this.sottotitolo='Procedi ad inserire la tua email e la password'
@@ -33,6 +34,7 @@ export class LoginComponent implements OnInit {
 
   invioLogin():void{
     console.log(this.loginForm.value)
+    this.loginService.login(this.loginForm.value);
     this.router.navigate(['welcome',this.email]);
   }
 

@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './component/header/header.component';
@@ -13,7 +14,8 @@ import { JumbotronComponent } from './component/jumbotron/jumbotron.component';
     JumbotronComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent,
