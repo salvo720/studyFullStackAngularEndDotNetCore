@@ -6,12 +6,23 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'welcome/:userId',
+    path: 'welcome',
     component: WelcomeComponent,
   },
   {
+    path: 'welcome/:userId',
+    component: WelcomeComponent,
+  },
+
+  {
     path: 'user/auth',
     component: LoginComponent,
+  },
+  {
+    // pagina di errore o redirect alla pagina di default , le altre rotte non hanna matchato
+    path: 'Login',
+    redirectTo: 'user/auth',
+    pathMatch:'full'
   },
   {
     path: 'articoli',
@@ -32,5 +43,3 @@ const routes: Routes = [
 export class AppRoutingModule {
 
 }
-
-// 5:00 video 15

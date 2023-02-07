@@ -11,10 +11,14 @@ export class LoginComponent implements OnInit {
   loginForm:FormGroup
   autenticato :boolean
   errorMsg:string
+  titolo:string
+  sottotitolo:string
   constructor(private fb:FormBuilder , private router:Router) {
 
     this.autenticato= false;
     this.errorMsg=''
+    this.titolo='Accesso & Autenticazione'
+    this.sottotitolo='Procedi ad inserire la tua email e la password'
 
     // inizializzazione form
     this.loginForm = this.fb.group({
