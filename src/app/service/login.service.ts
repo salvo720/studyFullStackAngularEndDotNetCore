@@ -10,6 +10,7 @@ export class LoginService {
   constructor( private http:HttpClient) { }
 
   login( loginForm:FormGroup){
-    console.log("loginForm :  ",loginForm)
+    console.log("loginForm :  ", JSON.stringify(loginForm))
+    sessionStorage.setItem("utente",JSON.stringify(loginForm))
   }
 }
