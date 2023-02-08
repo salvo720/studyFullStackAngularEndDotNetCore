@@ -1,3 +1,6 @@
+import { Ilogin } from './../../../../model/interface/ilogin';
+import { FormControl, FormGroup } from '@angular/forms';
+import { LoginService } from './../../../../service/login/login.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  utente:Ilogin
+  constructor( public login:LoginService) {
+    this.utente = JSON.parse(sessionStorage.getItem('utente')!)
+  }
 
   ngOnInit(): void {
   }
+
+
 
 }

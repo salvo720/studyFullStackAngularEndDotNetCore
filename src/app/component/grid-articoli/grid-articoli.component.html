@@ -1,0 +1,66 @@
+<section class="content-main">
+
+
+  <div class="content-header">
+    <h2 class="content-title"> Griglia Prodotti</h2>
+    <div>
+      <a routerLink="#" class="btn btn-primary">Esporta</a>
+      <a routerLink="#" class="btn btn-primary">Importa</a>
+      <a routerLink="#" class="btn btn-primary">Crea</a>
+    </div>
+  </div>
+
+
+  <div class="card mb-4">
+    <header class="card-header row ">
+      <div class="col-lg-4 col-md-5 me-auto">
+        <input type="text" class="form-control" placeholder="Cerca....">
+      </div>
+
+      <div class="col-lg-2 col-md-3">
+        <select class="form-select" id="ifForm-select">
+          <option value=""> Tutte </option>
+          <option value=""> Alimentari </option>
+          <option value=""> Chimico </option>
+          <option value=""> Fresco </option>
+        </select>
+      </div>
+
+      <div class="col-lg-2 col-6 col-md-3">
+        <select class="form-select" id="ifForm-select">
+          <option value=""> Nuovi </option>
+          <option value=""> Prezzo piu basso </option>
+          <option value=""> Più Acquistati </option>
+        </select>
+      </div>
+    </header>
+
+
+    <div class="card-body text-center">
+      <div class="row gx-3 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 row-cols-xxl-5">
+        <div class="col">
+          <div class="card card-product-grid">
+            <a routerLink="" class="img-wrap"> <img class="img-rounded" src="assets/images/prodotti/penne rigate barlla.jpg" width="250" height="255" alt=""></a>
+            <div class="infowrap">
+              <a routerLink="" class="title text-truncate">Barilla - Penne Rigate Kg. 0.5</a>
+              <div class=" price mb-2">€ 0.89</div> <!-- price -->
+
+              <a routerLink="" data-bs-toggle="dropdown" class="btn btn-sm btn-warning">
+                <i class="material-icons md-edit" title="edit" aria-hidden="true"></i>
+
+                Modifica
+              </a>
+              <a routerLink="" data-bs-toggle="dropdown" class="btn btn-sm btn-danger">
+                <i class="material-icons md-delete" title="delete" aria-hidden="true"></i>
+
+                Elimina
+              </a>
+            </div>
+          </div> <!-- card-product end // -->
+        </div> <!-- col // -->
+      </div>
+    </div>
+
+  </div>
+
+</section>

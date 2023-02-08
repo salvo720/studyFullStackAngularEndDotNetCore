@@ -10,19 +10,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/welcome">Home</a>
+          <a class="nav-link active" aria-current="page" routerLink="/welcome">  <i class="material-icons md-home" title="Home" aria-hidden="true"></i> Home </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/articoli">Prodotti</a>
+
+          <a class="nav-link" routerLink="/articoli">  <i class="material-icons md-archive" title="prodotti" aria-hidden="true"></i> Prodotti </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/promozione">Promozioni</a>
+          <a class="nav-link" routerLink="/promozione">  <i class="material-icons md-campaign" title="Promozioni" aria-hidden="true"></i> Promozioni </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/fidelty">Fidelity</a>
+          <a class="nav-link" routerLink="/fidelty"> <i class="material-icons md-card_membership" title="Fidelity" aria-hidden="true"></i> Fidelity </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/ordini">Ordini</a>
+          <a class="nav-link" routerLink="/ordini"> <i class="material-icons md-shopping_cart" title="Ordini" aria-hidden="true"></i>  Ordini </a>
         </li>
       </ul>
 
@@ -33,16 +34,31 @@
           <img class="img-circle" src="./assets/images/user.png" width="38" height="38" alt="">
         </button>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="#">accedi</a></li>
           <li><a class="dropdown-item" href="#">Registrati</a></li>
           <li><a class="dropdown-item" href="#">Disabilita </a></li>
           <li>
             <hr class="dropdown-divider">
           </li>
-          <li><a class="dropdown-item" href="#">Logout</a></li>
+          <li *ngIf="utente"><a class="dropdown-item" routerLink="/logout"> Logout {{ utente.email }} </a></li>
+          <li><a class="dropdown-item disabled"  *ngIf="!login.isLogged()" routerLink="/logout">Logout</a></li>
         </ul>
       </div>
+      <!-- classe vuota che fa da segnaposto  -->
+      <div class="col col-md-1"></div>
+
+      <div></div>
 
     </div>
   </div>
 </nav>
+
+
+<!-- ps : per far funzionare le material icons , importate , si devono importare i file css e font nella cartella assets :
+css ) file round.css
+font) file : tutti
+
+successivamente a livello di html usa questo tag :
+i class="material-icons md-archive" title="prodotti" aria-hidden="true"></i>
+l'icona e definita dalla classe md-archive , cambiando quello dopo md- cambiera l'icona , per vedere tutte basta aprire il file test dentro la cartella sample
+
+-->

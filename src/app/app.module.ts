@@ -8,13 +8,17 @@ import { WelcomeComponent } from './component/welcome/welcome.component';
 import { LoginComponent } from './component/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArticoliComponent } from './component/articoli/articoli.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { LogoutComponent } from './component/logout/logout.component';
+import { GridArticoliComponent } from './component/grid-articoli/grid-articoli.component';
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     LoginComponent,
-    ArticoliComponent
+    ArticoliComponent,
+    LogoutComponent,
+    GridArticoliComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -22,9 +26,9 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
