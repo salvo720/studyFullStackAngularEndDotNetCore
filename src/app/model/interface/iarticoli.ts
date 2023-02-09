@@ -7,4 +7,5 @@ export interface Iarticoli {
   prezzo:number
   active:boolean
   data:Date
+  imageUrl : string
 }

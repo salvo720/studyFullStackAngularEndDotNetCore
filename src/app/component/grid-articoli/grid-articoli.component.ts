@@ -1,3 +1,5 @@
+import { Iarticoli } from './../../model/interface/iarticoli';
+import { ArticoliService } from './../../service/articoli/articoli.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grid-articoli.component.css']
 })
 export class GridArticoliComponent implements OnInit {
-
-  constructor() { }
-
+  articoli$: Iarticoli[]
+  constructor(private articoliService: ArticoliService) {
+    this.articoli$ = [];
+  }
   ngOnInit(): void {
+    this.articoli$ = this.articoliService.getArticoli();
+    console.log('articoli$ : ',this.articoli$)
   }
 
 }

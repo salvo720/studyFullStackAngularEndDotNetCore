@@ -11,6 +11,7 @@ import { ArticoliComponent } from './component/articoli/articoli.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LogoutComponent } from './component/logout/logout.component';
 import { GridArticoliComponent } from './component/grid-articoli/grid-articoli.component';
+import { ArticoliCardComponent } from './component/grid-articoli/articoli-card/articoli-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { GridArticoliComponent } from './component/grid-articoli/grid-articoli.c
     ArticoliComponent,
     LogoutComponent,
     GridArticoliComponent,
+    ArticoliCardComponent,
   ],
   imports: [
     ReactiveFormsModule,

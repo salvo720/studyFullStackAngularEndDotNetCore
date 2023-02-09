@@ -1,0 +1,19 @@
+<div class="col">
+    <div class="card card-product-grid">
+        <a routerLink="" class="img-wrap"> <img class="img-rounded" src="{{ articolo.imageUrl }}" width="250" height="255" alt="immagine articolo"></a>
+        <div class="infowrap">
+            <a routerLink="" class="title text-truncate"> {{ articolo.descrizione }}</a>
+            <div class=" price mb-2"> {{ articolo.prezzo | currency : '€'}}</div> <!-- price -->
+
+            <a routerLink="" data-bs-toggle="dropdown" class="btn btn-sm btn-warning">
+                <i class="material-icons md-edit" title="edit" aria-hidden="true"></i>
+                Modifica
+            </a>
+            
+            <a routerLink="" data-bs-toggle="dropdown" class="btn btn-sm btn-danger">
+                <i class="material-icons md-delete" title="delete" aria-hidden="true"></i>
+                Elimina 
+            </a>
+        </div>
+    </div> <!-- card-product end // -->
+</div> <!-- col // -->
