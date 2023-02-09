@@ -5,15 +5,15 @@
             <a routerLink="" class="title text-truncate"> {{ articolo.descrizione }}</a>
             <div class=" price mb-2"> {{ articolo.prezzo | currency : '€'}}</div> <!-- price -->
 
-            <a routerLink="" data-bs-toggle="dropdown" class="btn btn-sm btn-warning">
+            <button class="btn btn-sm btn-warning" (click)="articoloEdit()">
                 <i class="material-icons md-edit" title="edit" aria-hidden="true"></i>
                 Modifica
-            </a>
-            
-            <a routerLink="" data-bs-toggle="dropdown" class="btn btn-sm btn-danger">
+            </button>
+
+            <button class="btn btn-sm btn-danger" (click)="articoloDelete()">
                 <i class="material-icons md-delete" title="delete" aria-hidden="true"></i>
-                Elimina 
-            </a>
+                Elimina
+            </button>
         </div>
     </div> <!-- card-product end // -->
 </div> <!-- col // -->
