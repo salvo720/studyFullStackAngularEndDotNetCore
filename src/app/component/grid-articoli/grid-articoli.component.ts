@@ -15,26 +15,24 @@ export class GridArticoliComponent implements OnInit {
   }
   ngOnInit(): void {
     this.articoli$ = this.articoliService.getArticoli();
-    console.log('articoli$ : ',this.articoli$)
+    console.log('articoli$ : ', this.articoli$)
   }
 
-  handleEdit(data:EventData){
-    let { $event , codart } =data;
-    console.log("event :" , $event , "cliccato tasto modifica del codice : " , codart)
+  handleEdit(data: EventData) {
+    let { $event, codart } = data;
+    console.log("event :", $event, "cliccato tasto modifica del codice : ", codart)
   }
 
-  handleDelete(data:EventData){
+  handleDelete(data: EventData) {
     console.log(data)
-      const { $event, codart } = data;
-      console.log("event :" , $event , "cliccato tasto modifica del codice : " , codart)
-      this.articoli$.splice(this.articoli$.findIndex(x=> x.codart === codart),1)
-      console.log("event :" , $event , "cliccato tasto modifica del codice : " , codart)
-
+    const { $event, codart } = data;
+    console.log("event :", $event, "cliccato tasto modifica del codice : ", codart)
+    this.articoli$.splice(this.articoli$.findIndex(x => x.codart === codart), 1)
   }
 }
 
 // custom type per edit e delete typescript
 type EventData = {
-  $event : Event,
-  codart : string
+  $event: Event,
+  codart: string
 }

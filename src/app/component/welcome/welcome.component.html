@@ -3,3 +3,6 @@
 <app-jumbotron [titolo]="titolo" [sottotitolo]="sottotitolo" [show]="show"></app-jumbotron>
 
 <p> clicca qui per visualizzare gli articoli  <a routerLink="/articoli"> articoli</a> </p>
+
+<button class="btn btn-primary" (click)="getSaluti()"> Saluti </button>
+<h2 *ngIf="risposta"> {{ risposta }}</h2>

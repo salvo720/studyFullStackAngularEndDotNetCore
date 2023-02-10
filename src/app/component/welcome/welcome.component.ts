@@ -1,5 +1,7 @@
+import { SalutiService } from './../../service/saluti/saluti.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-welcome',
@@ -11,14 +13,26 @@ export class WelcomeComponent implements OnInit {
   titolo: string;
   sottotitolo: string;
   show: boolean;
-  constructor(private route: ActivatedRoute) {
+  risposta: string
+  error: string;
+  constructor(private route: ActivatedRoute, private salutiService: SalutiService) {
     this.utente = '';
     this.titolo = 'Benvenuti in alphashot';
     this.sottotitolo = 'Visualizza le offerte del giorno';
     this.show = false;
+    this.risposta = '';
+    this.error = '';
   }
 
   ngOnInit(): void {
     this.utente = this.route.snapshot.params['userId'];
+  }
+
+  getSaluti(): Subscription {
+    console.log("Tasto saluti premuto")
+    return this.salutiService.getSalutiObservable().subscribe(
+      (risposta: string) => this.risposta = risposta ,
+      (error: any) => this.error = error
+    );
   }
 }
