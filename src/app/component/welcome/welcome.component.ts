@@ -30,7 +30,7 @@ export class WelcomeComponent implements OnInit {
 
   getSaluti(): Subscription {
     console.log("Tasto saluti premuto")
-    return this.salutiService.getSalutiObservable().subscribe(
+    return this.salutiService.getSalutiObservable(this.utente).subscribe(
       (risposta: string) => this.risposta = risposta ,
       (error: any) => this.error = error
     );

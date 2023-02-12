@@ -20,8 +20,8 @@ export class SalutiService {
     return "saluti";
   }
 
-  getSalutiObservable():Observable<string> {
-    return  this.http.get<Observable<string>>(this.apiUrl).pipe(
+  getSalutiObservable(nome:string):Observable<string> {
+    return  this.http.get<Observable<string>>(this.apiUrl + '/' + nome).pipe(
       map( (saluti:any) => saluti ),
       catchError(this.handleErrorObs)
     );
