@@ -1712,6 +1712,19 @@
         "build": {
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
+      },
+      "salutiWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/salutiWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/salutiWebApi.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -5505,13 +5518,18 @@
         "xunit.runner.visualstudio.2.4.5.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "salutiWebApi/1.0.0": {
+      "type": "project",
+      "path": "../../salutiWebApi/salutiWebApi.csproj",
+      "msbuildProject": "../../salutiWebApi/salutiWebApi.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj",
       "Microsoft.NET.Test.Sdk >= 17.4.1",
       "coverlet.collector >= 3.2.0",
+      "salutiWebApi >= 1.0.0",
       "xunit >= 2.4.2",
       "xunit.runner.visualstudio >= 2.4.5"
     ]
@@ -5522,11 +5540,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj",
+      "projectUniqueName": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj",
       "projectName": "TestsalutiWebApi",
-      "projectPath": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj",
+      "projectPath": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj",
       "packagesPath": "C:\\Users\\salvo\\.nuget\\packages\\",
-      "outputPath": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\obj\\",
+      "outputPath": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\salvo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5543,8 +5561,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj": {
-              "projectPath": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj"
+            "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj": {
+              "projectPath": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj"
             }
           }
         }
@@ -5599,16 +5617,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Non è possibile trovare le informazioni sul progetto per 'D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj'. Se si usa Visual Studio, questo problema può dipendere dal fatto che il caricamento del progetto è stato annullato o che il progetto non fa parte della soluzione corrente, di conseguenza è necessario eseguire un ripristino dalla riga di comando. In caso contrario, il file di progetto potrebbe non essere valido oppure non includere le destinazioni necessarie per il ripristino.",
-      "libraryId": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

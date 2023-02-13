@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NhkSsqFLdUpbOvp7C+U4uNqmPjNttrc4sluMYMcmWr3RzqGXJTthfPKmguQVops93LrF+blCJ28v8DnRf4okfQ==",
-  "success": false,
-  "projectFilePath": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj",
+  "dgSpecHash": "LSQsr7n0OV+GryX7Qj+GUdOb9umR60sfq823Zgpk2WaGMppg4iZHA3iF8kNZFbM5k69QCYouPr4LIoyIEjM74w==",
+  "success": true,
+  "projectFilePath": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\salvo\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\salvo\\.nuget\\packages\\microsoft.codecoverage\\17.4.1\\microsoft.codecoverage.17.4.1.nupkg.sha512",
@@ -94,15 +94,5 @@
     "C:\\Users\\salvo\\.nuget\\packages\\xunit.extensibility.execution\\2.4.2\\xunit.extensibility.execution.2.4.2.nupkg.sha512",
     "C:\\Users\\salvo\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Non è possibile trovare le informazioni sul progetto per 'D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj'. Se si usa Visual Studio, questo problema può dipendere dal fatto che il caricamento del progetto è stato annullato o che il progetto non fa parte della soluzione corrente, di conseguenza è necessario eseguire un ripristino dalla riga di comando. In caso contrario, il file di progetto potrebbe non essere valido oppure non includere le destinazioni necessarie per il ripristino.",
-      "libraryId": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

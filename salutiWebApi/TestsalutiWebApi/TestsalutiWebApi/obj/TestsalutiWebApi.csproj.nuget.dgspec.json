@@ -1,17 +1,75 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj": {}
+    "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj": {}
   },
   "projects": {
-    "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj": {
+    "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj",
-        "projectName": "TestsalutiWebApi",
-        "projectPath": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj",
+        "projectUniqueName": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj",
+        "projectName": "salutiWebApi",
+        "projectPath": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj",
         "packagesPath": "C:\\Users\\salvo\\.nuget\\packages\\",
-        "outputPath": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\obj\\",
+        "outputPath": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\salvo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj",
+        "projectName": "TestsalutiWebApi",
+        "projectPath": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj",
+        "packagesPath": "C:\\Users\\salvo\\.nuget\\packages\\",
+        "outputPath": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\salvo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +86,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj": {
-                "projectPath": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj"
+              "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj": {
+                "projectPath": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj"
               }
             }
           }
