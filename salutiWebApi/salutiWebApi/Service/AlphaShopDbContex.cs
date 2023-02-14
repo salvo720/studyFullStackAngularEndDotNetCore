@@ -28,9 +28,28 @@ namespace salutiWebApi.Service
       //relazione one to many (uno a molti ) fra articoli e barcode 
 
       modelBuilder.Entity<Ean>()
-        .HasOne<Articoli>( keyOne => keyOne.articolo)
-        .WithMany( keyMany => keyMany.Barcode)
-        .HasForeignKey( keyForeign => keyForeign.CodArt );
+        .HasOne<Articoli>( s => s.articolo)
+        .WithMany( g => g.Barcode)
+        .HasForeignKey( s => s.CodArt );
+
+      // relazione 1 a uno tra articoli e ingredienti
+      modelBuilder.Entity<Articoli>()
+        .HasOne<Ingredienti>(s => s.ingrediente)
+        .WithOne(g => g.articolo)
+        .HasForeignKey<Ingredienti>(s => s.CodArt);
+
+      //relazione one to many iva e articoli
+      modelBuilder.Entity<Articoli>()
+        .HasOne<Iva>(s => s.iva)
+        .WithMany(g => g.articoli)
+        .HasForeignKey(s => s.IdIva);
+
+      // relazione one to many fra FamAssort e Articoli
+      modelBuilder.Entity<Articoli>()
+        .HasOne<FamAssort>(s => s.famAssort)
+        .WithMany(g => g.articoli)
+        .HasForeignKey(s => s.IdFamAss);
+
     }
   }
 }
