@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using salutiWebApi.Models;
 using System.Linq;
 
@@ -17,10 +18,10 @@ namespace salutiWebApi.Service
       // this._alphaShopDbContex = alphaShopDbContex;
     }
 
-    public ICollection<Articoli> SelArticoliByDescrizione(string Descrizione)
+    public IEnumerable<Articoli> SelArticoliByDescrizione(string Descrizione)
     {
       return _alphaShopDbContex.Articoli
-        .Where(a => a.Descrizione.Contains(Descrizione))
+        .Where(a => a.Descrizione!.Contains(Descrizione) )
         .OrderBy( a => a.Descrizione)
         .ToList();
       // usiamo alla fine to list perche e una ICollection , ( collezione di classi articoli ) 
@@ -29,9 +30,9 @@ namespace salutiWebApi.Service
     public Articoli SelArticoloByCodice(string Codice)
     {
       return _alphaShopDbContex.Articoli
-        .Where(a => a.CodArt.Equals(Codice))
+        .Where(a => a.CodArt!.Equals(Codice))
         .OrderBy(a => a.CodArt)
-        .FirstOrDefault();
+        .FirstOrDefault()!;
       //FirstorDefault si utilizza quando si ha soltato un elemento di una classe ,
       // indica lavora secondo la logica se lo trovi lo restituisci , altrimenti non restiusci nulla 
 
@@ -44,9 +45,9 @@ namespace salutiWebApi.Service
       // infine FirstOrDefault ritrno l'elemnto se lo trova altrimenti non tornera nulla 
 
       return _alphaShopDbContex.BarCode
-        .Where(b => b.BarCode.Equals(Ean))
+        .Where(b => b.BarCode!.Equals(Ean))
         .Select(a => a.articolo)
-        .FirstOrDefault();
+        .FirstOrDefault()!;
     }
     public bool InsertArticoli(Articoli articolo)
     {

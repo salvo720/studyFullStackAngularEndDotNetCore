@@ -7,14 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//aggiunta del cors
+builder.Services.AddCors();
 
-
-var connectionString = builder.Configuration.GetConnectionString("alphashopDbConnString");
-// puo essere fatto anche cosi sono equivalenti 
-//var connectionString = _configuration["ConnectionString:alphashopDbConnString"];
-
-// e l'effetiva connessione che avviene al db 
-builder.Services.AddDbContext<AlphaShopDbContex>( options => options.UseSqlServer(connectionString));
+// connessione che avviene al db 
+builder.Services.AddDbContext<AlphaShopDbContex>();
 
 // usiamo l'inverse of control , Ioc , dove andiamo a definire da un interfaccia a quale classe fare riferimento 
 builder.Services.AddScoped<IArticoliRepository, ArticolyRepository>();

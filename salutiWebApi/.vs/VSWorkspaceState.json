@@ -2,11 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\salutiWebApi",
+    "\\salutiWebApi\\Controllers",
     "\\salutiWebApi\\Models",
     "\\salutiWebApi\\Service",
     "\\TestsalutiWebApi",
     "\\TestsalutiWebApi\\TestsalutiWebApi"
   ],
-  "SelectedNode": "\\salutiWebApi\\Service\\AlphaShopDbContex.cs",
+  "SelectedNode": "\\salutiWebApi\\Service\\ArticolyRepository.cs",
   "PreviewInSolutionExplorer": false
 }
