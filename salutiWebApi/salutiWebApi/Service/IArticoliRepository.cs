@@ -7,7 +7,7 @@ namespace salutiWebApi.Service
   public interface IArticoliRepository
   {
     //Selezone
-    IEnumerable<Articoli> SelArticoliByDescrizione(string Descrizione);
+    Task<IEnumerable<Articoli>> SelArticoliByDescrizione(string Descrizione);
 
     Articoli SelArticoloByCodice(string Codice);
     Articoli SelArticoloByEan(string Ean);
