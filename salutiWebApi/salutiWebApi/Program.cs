@@ -14,7 +14,7 @@ builder.Services.AddCors();
 builder.Services.AddDbContext<AlphaShopDbContex>();
 
 // usiamo l'inverse of control , Ioc , dove andiamo a definire da un interfaccia a quale classe fare riferimento 
-builder.Services.AddScoped<IArticoliRepository, ArticolyRepository>();
+builder.Services.AddScoped<IArticoliRepository, ArticoliRepository>();
 
 var app = builder.Build();
 

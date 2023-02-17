@@ -12,5 +12,11 @@ namespace salutiWebApi.Dtos
     public Int16? PzCart { get; set; }
     public double? PesoNetto { get; set; }
     public DateTime? DataCreazione { get; set; }
+
+    // aggiunto per visualizzare i dati della tabella barcode
+    public ICollection<BarcodeDto> BarcodeDto { get; set; }
   }
+
+
+ 
 }

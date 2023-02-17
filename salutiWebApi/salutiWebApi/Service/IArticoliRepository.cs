@@ -9,8 +9,8 @@ namespace salutiWebApi.Service
     //Selezone
     Task<IEnumerable<Articoli>> SelArticoliByDescrizione(string Descrizione);
 
-    Articoli SelArticoloByCodice(string Codice);
-    Articoli SelArticoloByEan(string Ean);
+    Task<Articoli> SelArticoloByCodice(string Codice);
+    Task<Articoli> SelArticoloByEan(string Ean);
 
     //update e insert e delete
 
@@ -20,7 +20,7 @@ namespace salutiWebApi.Service
     bool Salva( );
 
     //verifica se esiste un articolo 
-    bool ArticoloExists(string Codice);
+    Task<bool> ArticoloExists(string Codice);
 
   }
 }
