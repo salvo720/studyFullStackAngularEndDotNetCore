@@ -2,12 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\salutiWebApi",
-    "\\salutiWebApi\\Controllers",
-    "\\salutiWebApi\\Models",
     "\\salutiWebApi\\Service",
     "\\TestsalutiWebApi",
     "\\TestsalutiWebApi\\TestsalutiWebApi"
   ],
-  "SelectedNode": "\\salutiWebApi\\Service\\ArticolyRepository.cs",
+  "SelectedNode": "\\TestsalutiWebApi\\TestsalutiWebApi\\TestsalutiWebApi.csproj",
   "PreviewInSolutionExplorer": false
 }
