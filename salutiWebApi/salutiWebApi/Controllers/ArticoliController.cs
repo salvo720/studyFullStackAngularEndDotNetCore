@@ -31,15 +31,17 @@ namespace salutiWebApi.Controllers
       // che ritornera una bad request se qualcosa non e andata per il verso giusto
       var articoliDto = new List<ArticoliDto>();
 
-      var articoli = await _articoliRepository.SelArticoliByDescrizione(Descrizione);
-
       // guard codiction
+      // il secondo caso e quello in cui la descrizione e un char 
       if (!ModelState.IsValid)
       {
         return BadRequest(ModelState);
       }
 
-      if (articoli.Count() == 0)
+      var articoli = await _articoliRepository.SelArticoliByDescrizione(Descrizione);
+      var barcodeDto = new List<BarcodeDto>();
+
+      if (articoli.Count() == 0 || articoli == null)
       {
         // ritrno errore 404
         return NotFound(string.Format(articoloNonTrovato, Descrizione, nameof(Descrizione)));
@@ -50,6 +52,17 @@ namespace salutiWebApi.Controllers
 
       foreach (var articolo in articoli)
       {
+        //Console.WriteLine("articoli " + articolo.famAssort.Descrizione);
+
+        foreach (var articoloBarcode in articolo.barcode!)
+        {
+          barcodeDto.Add(new BarcodeDto
+          {
+            Barcode = articoloBarcode.BarCode,
+            Tipo = articoloBarcode.IdTipoArt,
+          });
+        }
+
         articoliDto.Add(new ArticoliDto
         {
           CodArt = articolo.CodArt,
@@ -59,18 +72,15 @@ namespace salutiWebApi.Controllers
           PzCart = articolo.PzCart,
           PesoNetto = articolo.PesoNetto,
           DataCreazione = articolo.DataCreazione,
-          IvaDto = new IvaDto(articolo.iva.Descrizione , articolo.iva.Aliquota),
-          Categoria = articolo.famAssort.Descrizione,
+          BarcodeDto = barcodeDto,
         });
       }
-
-
       return Ok(articoliDto);
     }
 
     [ProducesResponseType(400)]
     [ProducesResponseType(404)]
-    [ProducesResponseType(200, Type = typeof(Articoli))]
+    [ProducesResponseType(200, Type = typeof(ArticoliDto))]
     [HttpGet("cerca/codice/{CodArt}")]
     public async Task<IActionResult> GetArticoliByCodice(string CodArt)
     {
@@ -84,32 +94,7 @@ namespace salutiWebApi.Controllers
       }
       var articolo = await _articoliRepository.SelArticoloByCodice(CodArt);
 
-      var barcodeDto = new List<BarcodeDto>();
-
-      foreach (var barcodeArticoli in articolo.Barcode)
-      {
-        barcodeDto.Add(new BarcodeDto
-        {
-          Barcode = barcodeArticoli.BarCode,
-          Tipo = barcodeArticoli.IdTipoArt,
-        }) ;
-      }
-
-      var articoliDto = new ArticoliDto
-      {
-        CodArt = articolo.CodArt,
-        Descrizione = articolo.Descrizione,
-        Um = articolo.Um,
-        IdStatoArt = articolo.IdStatoArt,
-        PzCart = articolo.PzCart,
-        PesoNetto = articolo.PesoNetto,
-        DataCreazione = articolo.DataCreazione,
-        BarcodeDto = barcodeDto,
-        IvaDto = new IvaDto(articolo.iva.Descrizione , articolo.iva.Aliquota),
-        Categoria = articolo.famAssort.Descrizione,
-      };
-
-      return Ok(articoliDto);
+      return Ok(this.GetArticoloByDto(articolo));
     }
 
     [ProducesResponseType(400)]
@@ -119,12 +104,28 @@ namespace salutiWebApi.Controllers
     public async Task<IActionResult> GelArticoloByEan(string Barcode)
     {
       // gestione articolo non trovato
-
       var articolo = await _articoliRepository.SelArticoloByEan(Barcode);
 
       if (articolo == null)
       {
         return NotFound(string.Format(articoloNonTrovato, Barcode, nameof(Barcode)));
+      }
+
+      return Ok(this.GetArticoloByDto(articolo));
+    }
+
+    public ArticoliDto GetArticoloByDto(Articoli articolo)
+    {
+
+      var barcodeDto = new List<BarcodeDto>();
+
+      foreach (var barcodeArticolo in articolo.barcode)
+      {
+        barcodeDto.Add(new BarcodeDto
+        {
+          Barcode = barcodeArticolo.BarCode,
+          Tipo = barcodeArticolo.IdTipoArt,
+        });
       }
 
       var articoloDto = new ArticoliDto
@@ -136,11 +137,12 @@ namespace salutiWebApi.Controllers
         PzCart = articolo.PzCart,
         PesoNetto = articolo.PesoNetto,
         DataCreazione = articolo.DataCreazione,
-        IvaDto = new IvaDto(articolo.iva.Descrizione , articolo.iva.Aliquota),
+        BarcodeDto = barcodeDto,
+        IvaDto = new IvaDto(articolo.iva.Descrizione, articolo.iva.Aliquota),
         Categoria = articolo.famAssort.Descrizione,
       };
 
-      return Ok(articoloDto);
+      return articoloDto;
     }
 
   }

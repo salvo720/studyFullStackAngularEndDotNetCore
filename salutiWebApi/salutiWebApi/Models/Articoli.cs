@@ -33,7 +33,7 @@ namespace salutiWebApi.Models
     //lato molti a 1
     //relazione con la tabella Ean o Barcode
     //relazione : 1 articolo corrisponde a molti barcode
-    public virtual ICollection<Ean>? Barcode { get; set; }
+    public virtual ICollection<Ean>? barcode { get; set; }
 
     // relazione 1 a 1 , 1 ingredinete corrisponde ad 1 articolo
     public virtual Ingredienti? ingrediente { get; set; }

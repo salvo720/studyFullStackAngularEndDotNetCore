@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj": {}
+    "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj": {}
   },
   "projects": {
-    "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj": {
+    "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj",
+        "projectUniqueName": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj",
         "projectName": "salutiWebApi",
-        "projectPath": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj",
+        "projectPath": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj",
         "packagesPath": "C:\\Users\\salvo\\.nuget\\packages\\",
-        "outputPath": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\obj\\",
+        "outputPath": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\salvo\\AppData\\Roaming\\NuGet\\NuGet.Config",

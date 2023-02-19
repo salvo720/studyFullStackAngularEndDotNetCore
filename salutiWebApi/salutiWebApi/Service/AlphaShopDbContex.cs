@@ -38,7 +38,7 @@ namespace salutiWebApi.Service
 
       modelBuilder.Entity<Ean>()
         .HasOne<Articoli>( s => s.articolo)
-        .WithMany( g => g.Barcode)
+        .WithMany( g => g.barcode)
         .HasForeignKey( s => s.CodArt );
 
       // relazione 1 a uno tra articoli e ingredienti

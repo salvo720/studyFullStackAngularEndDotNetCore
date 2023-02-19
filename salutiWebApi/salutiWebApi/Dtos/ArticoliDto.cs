@@ -1,3 +1,5 @@
+using salutiWebApi.Models;
+
 namespace salutiWebApi.Dtos
 {
   //  dto significa : Data Transformation Object 
