@@ -59,6 +59,8 @@ namespace salutiWebApi.Controllers
           PzCart = articolo.PzCart,
           PesoNetto = articolo.PesoNetto,
           DataCreazione = articolo.DataCreazione,
+          IvaDto = new IvaDto(articolo.iva.Descrizione , articolo.iva.Aliquota),
+          Categoria = articolo.famAssort.Descrizione,
         });
       }
 
@@ -103,6 +105,8 @@ namespace salutiWebApi.Controllers
         PesoNetto = articolo.PesoNetto,
         DataCreazione = articolo.DataCreazione,
         BarcodeDto = barcodeDto,
+        IvaDto = new IvaDto(articolo.iva.Descrizione , articolo.iva.Aliquota),
+        Categoria = articolo.famAssort.Descrizione,
       };
 
       return Ok(articoliDto);
@@ -132,6 +136,8 @@ namespace salutiWebApi.Controllers
         PzCart = articolo.PzCart,
         PesoNetto = articolo.PesoNetto,
         DataCreazione = articolo.DataCreazione,
+        IvaDto = new IvaDto(articolo.iva.Descrizione , articolo.iva.Aliquota),
+        Categoria = articolo.famAssort.Descrizione,
       };
 
       return Ok(articoloDto);

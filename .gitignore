@@ -27,6 +27,7 @@ yarn-error.log
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+/.vs
 
 # Miscellaneous
 /.angular/cache
@@ -40,3 +41,8 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+
+#Asp.net core
+/obj
+/Debug

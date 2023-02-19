@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tOCgQwD+1U/TSdHb4ys/IKkv1cK6v12mCBdjW0MSNoWk9OuieB6Is7ChgLb0Ildr/uGEArGyigc2Y+tmksosUg==",
+  "dgSpecHash": "/Uq0kZylbOzslO7ihfDtm2IQ7+9vPDuG5PshsjziUc5krvuTGtBZ6kHPgxnmTh90SpUZaRzB/Y6wizTMv6Tvrg==",
   "success": true,
-  "projectFilePath": "D:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj",
+  "projectFilePath": "d:\\Ampps\\www\\studyFullStackAngularEndDotNetCore\\salutiWebApi\\salutiWebApi\\salutiWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\salvo\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\salvo\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

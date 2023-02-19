@@ -10,7 +10,7 @@ namespace salutiWebApi.Models
     public string? Descrizione { get; set; }
 
     [Required]
-    public int Aliquota { get; set; }
+    public Int16 Aliquota { get; set; }
 
     //relazione : 1 iva corrisponde a molti articoli
     public virtual ICollection<Articoli>? articoli { get; set; }

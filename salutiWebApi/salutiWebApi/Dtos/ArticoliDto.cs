@@ -15,6 +15,10 @@ namespace salutiWebApi.Dtos
 
     // aggiunto per visualizzare i dati della tabella barcode
     public ICollection<BarcodeDto> BarcodeDto { get; set; }
+
+    public IvaDto IvaDto { get; set; }
+
+    public string Categoria { get; set; }
   }
 
 

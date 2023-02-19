@@ -23,6 +23,9 @@ namespace salutiWebApi.Service
     {
       return await _alphaShopDbContex.Articoli
         .Where(a => a.Descrizione!.Contains(Descrizione) )
+        .Include(a => a.IdIva)
+        .Include(a => a.famAssort)
+        .Include(a => a.Barcode)
         .OrderBy( a => a.Descrizione)
         .ToListAsync();
       // usiamo alla fine to list perche e una ICollection , ( collezione di classi articoli ) 
@@ -34,6 +37,8 @@ namespace salutiWebApi.Service
         .Where(a => a.CodArt!.Equals(Codice))
         .OrderBy(a => a.CodArt)
         .Include(a => a.Barcode) // include i dati della tabella relazionale tramite la chiave esterna 
+        .Include(a => a.famAssort)
+        .Include(a => a.iva)
         .FirstOrDefaultAsync();
       //FirstorDefault si utilizza quando si ha soltato un elemento di una classe ,
       // indica lavora secondo la logica se lo trovi lo restituisci , altrimenti non restiusci nulla 
@@ -49,6 +54,8 @@ namespace salutiWebApi.Service
       return await _alphaShopDbContex.BarCode
         .Where(b => b.BarCode!.Equals(Ean))
         .Select(a => a.articolo)
+        .Include(a => a.IdIva)
+        .Include(a => a.famAssort)
         .FirstOrDefaultAsync();
     }
     public bool InsertArticoli(Articoli articolo)
