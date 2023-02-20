@@ -43,5 +43,6 @@ namespace salutiWebApi.Models
 
     // relazione : 1 famAssort corrisponde a molti articoli
     public virtual FamAssort? famAssort { get; set; }
+
   }
 }

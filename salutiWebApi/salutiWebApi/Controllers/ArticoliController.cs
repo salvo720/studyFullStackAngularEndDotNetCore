@@ -32,16 +32,15 @@ namespace salutiWebApi.Controllers
       var articoliDto = new List<ArticoliDto>();
 
       // guard codiction
-      // il secondo caso e quello in cui la descrizione e un char 
+      // il secondo caso e quello in cui la descrizione e un char
       if (!ModelState.IsValid)
       {
         return BadRequest(ModelState);
       }
 
       var articoli = await _articoliRepository.SelArticoliByDescrizione(Descrizione);
-      var barcodeDto = new List<BarcodeDto>();
 
-      if (articoli.Count() == 0 || articoli == null)
+      if ( articoli == null || articoli.Count() == 0)
       {
         // ritrno errore 404
         return NotFound(string.Format(articoloNonTrovato, Descrizione, nameof(Descrizione)));
@@ -52,28 +51,10 @@ namespace salutiWebApi.Controllers
 
       foreach (var articolo in articoli)
       {
-        //Console.WriteLine("articoli " + articolo.famAssort.Descrizione);
+        if(articolo != null){
 
-        foreach (var articoloBarcode in articolo.barcode!)
-        {
-          barcodeDto.Add(new BarcodeDto
-          {
-            Barcode = articoloBarcode.BarCode,
-            Tipo = articoloBarcode.IdTipoArt,
-          });
+        articoliDto.Add(GetArticoloByDto(articolo));
         }
-
-        articoliDto.Add(new ArticoliDto
-        {
-          CodArt = articolo.CodArt,
-          Descrizione = articolo.Descrizione,
-          Um = articolo.Um,
-          IdStatoArt = articolo.IdStatoArt,
-          PzCart = articolo.PzCart,
-          PesoNetto = articolo.PesoNetto,
-          DataCreazione = articolo.DataCreazione,
-          BarcodeDto = barcodeDto,
-        });
       }
       return Ok(articoliDto);
     }
@@ -116,7 +97,7 @@ namespace salutiWebApi.Controllers
 
     public ArticoliDto GetArticoloByDto(Articoli articolo)
     {
-
+      Console.WriteLine(articolo.CodArt);
       var barcodeDto = new List<BarcodeDto>();
 
       foreach (var barcodeArticolo in articolo.barcode)
@@ -132,8 +113,8 @@ namespace salutiWebApi.Controllers
       {
         CodArt = articolo.CodArt,
         Descrizione = articolo.Descrizione,
-        Um = articolo.Um,
-        IdStatoArt = articolo.IdStatoArt,
+        Um = articolo.Um?.Trim(), // Trim() usato sulle stringhe rimuove gli spazi quando sono >1
+        IdStatoArt = articolo.IdStatoArt?.Trim(),
         PzCart = articolo.PzCart,
         PesoNetto = articolo.PesoNetto,
         DataCreazione = articolo.DataCreazione,
