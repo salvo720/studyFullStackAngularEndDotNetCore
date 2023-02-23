@@ -13,6 +13,7 @@ builder.Services.AddCors();
 // connessione che avviene al db 
 builder.Services.AddDbContext<AlphaShopDbContex>();
 
+// dependecy injection , ovvero iniziene delle dipendenze 
 // usiamo l'inverse of control , Ioc , dove andiamo a definire da un interfaccia a quale classe fare riferimento 
 builder.Services.AddScoped<IArticoliRepository, ArticoliRepository>();
 
