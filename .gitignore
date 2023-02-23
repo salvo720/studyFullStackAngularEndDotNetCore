@@ -27,7 +27,8 @@ yarn-error.log
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
-/.vs
+.vs/
+.vscode/
 
 # Miscellaneous
 /.angular/cache
@@ -44,5 +45,5 @@ Thumbs.db
 
 
 #Asp.net core
-/bin
-/obj
+bin/
+obj/
