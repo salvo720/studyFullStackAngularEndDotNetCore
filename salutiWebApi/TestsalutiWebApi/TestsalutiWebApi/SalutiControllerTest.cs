@@ -21,7 +21,7 @@ namespace TestsalutiWebApi
         public void testGetSaluti()
         {
             string retVal = salutiController.getSaluti();
-            string testVal = "Saluti , sono la tua prima web api";
+            string testVal = "\"Saluti , sono la tua prima web api\"";
 
             Assert.Equal(retVal, testVal);
 
@@ -33,7 +33,7 @@ namespace TestsalutiWebApi
 
             string stringa = "Test";
             string retVal = salutiController.getSaluti(stringa);
-            string testVal = "Saluti , Test sono la tua prima web api";
+            string testVal = "\"Saluti , Test sono la tua prima web api c# 6.0 \"";
 
             Assert.Equal(retVal, testVal);
         }
