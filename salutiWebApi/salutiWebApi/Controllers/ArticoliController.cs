@@ -12,7 +12,7 @@ namespace salutiWebApi.Controllers
   {
     // Dependency inject :
     // ovvero stiamo iniettando all'interno della nostra classe una classe dipendenza
-    // da notare che abbiamo usato un interfaccia , e questo ci permette di creare diverse classi di implementazione e decide dopo quali attivare
+    // da notare che abbiamo usato un interfaccia , e questo ci permette di creare diverse classi di implementazione e decidere dopo quali attivare
     // la dependecy inject che si puo effetturare su un progetto Asp.net core 6.0 dipende dal metodo ConfigureService su program dove troviamo il metodo AddScoped
     // Dove andremo a specificare il servizio e la relativa classe di implmentazione
 
@@ -23,24 +23,24 @@ namespace salutiWebApi.Controllers
 
     // Dopo che un servizio ha terminato il suo ciclo di vita le risorse vengono rilascite .
 
-    // L'ordine di preferenza di quali isntaziare corrisponde a quello su ,
+    // L'ordine di preferenza di quali instaziare corrisponde a quello su ,
     // ovvero e preferibile instazioare un service : Transient>Scoped>Singleton ;
 
-    // 1) posizione Transiente , perche crea i servizi tutti le volte che vengono iniettati e richiesti
+    // 1) posizione Transient , perche crea i servizi tutti le volte che vengono iniettati e richiesti
 
-    // 2) posizione abbiamo gli Scoped perche si basa sulla richiesta web e una volta che la richiesta
-    // e terminata termina anche il ciclo di vita del servizio
+    // 2) posizione Scoped , abbiamo gli Scoped perche si basa sulla richiesta web e una volta che la richiesta
+    // e terminata, termina anche il ciclo di vita del servizio
 
-    // 3) posizione troviamo il SingleTon , perche il SingleTon da problemi di consumo di memoria ,
+    // 3) posizione troviamo il SingleTon , perche il SingleTon viene creato una sola volta per l'appicazione quindi da problemi di consumo di memoria ,
     // perche solo dopo che terminano il loro ciclo di vita le risorse vengono rilascite
-    // ma utilizzadno un SingleTon questo non capita mai perche dopo che i servizi vengono creati vengono gestiti a livello di applicazine
+    // ma utilizzadno un SingleTon questo non capita mai perche dopo che i servizi vengono creati vengono creati e gestiti a livello di applicazine
 
     // ma dove e che specifichiamo quale tipo di dependecy injection usare ?
     // Siamo noi a poter decidere il ciclo di vita dei nostri servizi nel file program dell'applciazione
     // per trovare la parte di dependcy inject ci basta cercare service.Add + tipologia del servizio , ad esempio services.AddScoped<Interfacciao,Classe>();
     // esempio attuale nell'applicazione : service.AddScoped<IArticoliRepository,ArticoliRepository>();
 
-    // Quando su un controller si usa la depedency Injection bisogna far precedere sempre usare readonly sulla variabile del depency Injection , che quindi sara (esempio attuale ) :
+    // Quando su un controller usa la depedency Injection bisogna far precedere sempre readonly sulla variabile del depency Injection , che quindi sara di sola lettura  (esempio attuale ) :
     // private readonly IArticoliRepository articoliRepository ,
     // NotaBene : con il codice alla riga su creiamo un attributo nella classe controller di tipo interfaccia e su program andiamo a dire chi e la classe da instanziare e la tipologia di servizio
 
@@ -149,12 +149,12 @@ namespace salutiWebApi.Controllers
         Descrizione = articolo.Descrizione,
         Um = articolo.Um?.Trim(), // Trim() usato sulle stringhe rimuove gli spazi quando sono >1
         IdStatoArt = articolo.IdStatoArt?.Trim(),
-        PzCart = articolo.PzCart,
+        PzCart = articolo?.PzCart,
         PesoNetto = articolo.PesoNetto,
         DataCreazione = articolo.DataCreazione,
         BarcodeDto = barcodeDto,
         IvaDto = new IvaDto(articolo.iva.Descrizione, articolo.iva.Aliquota),
-        Categoria = articolo.famAssort.Descrizione,
+        Categoria = articolo.famAssort?.Descrizione,
       };
 
       return articoloDto;

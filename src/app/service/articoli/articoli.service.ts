@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Iarticoli } from './../../model/interface/iarticoli';
 import { Injectable } from '@angular/core';
 
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class ArticoliService {
   articoli: Iarticoli[]
-  constructor() {
+  constructor(private http:HttpClient) {
     this.articoli = [
       { codart: 'codart1', descrizione: 'penne rigate barilla 1kg', um: 'PZ', pzcart: 1, peso: 1, prezzo: 1.09, active: true, data: new Date(), imageUrl: 'assets/images/prodotti/penneRigateBarlla.jpg' },
       { codart: 'codart2', descrizione: 'descrizione2', um: 'PZ', pzcart: 2, peso: 33, prezzo: 123, active: true, data: new Date(), imageUrl: 'assets/images/prodotti/barillaSalmone.jpg' },
@@ -18,6 +19,13 @@ export class ArticoliService {
 
   getArticoli(): Iarticoli[] {
     return this.articoli;
+  }
+
+
+  getAricoliByDesc(descrizione : string) {
+    const url = `https://localhost:7285/api/articoli/cerca/descrizione/${descrizione}`;
+    return this.http.get<Iarticoli[]>(url);
+
   }
 
   getArticoliByCode(codart: string): Iarticoli {

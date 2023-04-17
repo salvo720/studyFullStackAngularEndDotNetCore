@@ -13,7 +13,7 @@ namespace salutiWebApi.Service
     public ArticoliRepository(AlphaShopDbContex alphaShopDbContex)
     {
       _alphaShopDbContex = alphaShopDbContex;
-      // il codice sotto e equvalente uso il _ perche dotnet nel generare il
+      // il codice sotto è equvalente uso il _ perche dotnet nel generare il
       // file segue questa sintassi
       // this._alphaShopDbContex = alphaShopDbContex;
     }
