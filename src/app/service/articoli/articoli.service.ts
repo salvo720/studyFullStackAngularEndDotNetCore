@@ -24,6 +24,7 @@ export class ArticoliService {
 
   getAricoliByDesc(descrizione : string) {
     const url = `https://localhost:7285/api/articoli/cerca/descrizione/${descrizione}`;
+
     return this.http.get<Iarticoli[]>(url);
 
   }
