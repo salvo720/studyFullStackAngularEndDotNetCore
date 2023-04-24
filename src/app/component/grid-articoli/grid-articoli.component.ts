@@ -9,17 +9,20 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
   styleUrls: ['./grid-articoli.component.css']
 })
 export class GridArticoliComponent implements OnInit {
-  articoli$: Iarticoli[]
-  constructor(private articoliService: ArticoliService) {
-    this.articoli$ = [];
-  }
-  ngOnInit(): void {
-    this.articoli$ = this.articoliService.getArticoli();
-    console.log('articoli$ : ', this.articoli$)
+  articoli$: Iarticoli[] = []
+  error : string = "";
+
+  constructor(private articoliService: ArticoliService) {  }
+
+   ngOnInit(): void {
+    this.articoliService.getAricoliByDesc('Barilla').subscribe({
+      next: (risposta: Iarticoli[]) => this.articoli$ = risposta,
+      error: (error: string) => this.error = error.toString()
+    })
   }
 
   handleEdit(data: EventData) {
-    let { $event, codart } = data;
+      let { $event, codart } = data;
     console.log("event :", $event, "cliccato tasto modifica del codice : ", codart)
   }
 
@@ -27,7 +30,7 @@ export class GridArticoliComponent implements OnInit {
     console.log(data)
     const { $event, codart } = data;
     console.log("event :", $event, "cliccato tasto modifica del codice : ", codart)
-    this.articoli$.splice(this.articoli$.findIndex(x => x.codart === codart), 1)
+    this.articoli$.splice(this.articoli$.findIndex(x => x.codArt === codart), 1)
   }
 }
 

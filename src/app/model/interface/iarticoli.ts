@@ -1,11 +1,12 @@
 export interface Iarticoli {
-  codart:string
+  codArt:string
   descrizione:string
   um:string
-  pzcart:number
-  peso:number
+  codStat : number
+  pzCart:number
+  pesoNetto:number
   prezzo:number
-  active:boolean
-  data:Date
+  idStatoArt:string
+  dataCreazione:Date
   imageUrl : string
 }
